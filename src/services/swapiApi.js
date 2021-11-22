@@ -9,4 +9,11 @@ export const getAllFilms = async () => {
     throw error;
   }
 };
-// console.log(getAllFilms());
+
+export const getEntitiesInfo = async (entities) => {
+  try {
+    return await axios.get(entities);
+  } catch (error) {
+    throw error;
+  }
+};
