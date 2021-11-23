@@ -21,3 +21,5 @@ export const getSearchQuerySuccess = createAction(
   "search/getSearchQuerySuccess"
 );
 export const getSearchQueryError = createAction("search/getSearchQueryError");
+
+export const setIsSearch = createAction("search/setIsSearch");

@@ -1,13 +1,9 @@
 import styled from "styled-components";
 
 const ContentStyled = styled.div`
-  padding: 0 30px 20px 30px;
+  /* margin-bottom: 20px; */
 
-  /* .film_title {
-    text-align: center;
-  } */
-
-  .film_items {
+  .film_items:not(:last-child) {
     margin-bottom: 10px;
   }
 `;

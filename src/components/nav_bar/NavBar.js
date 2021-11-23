@@ -1,17 +1,16 @@
-// import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setIsSearch } from "../../redux/films/filmsActions";
 
-import { useSelector } from "react-redux";
-// import { selectFilm } from "../../redux/films/filmsActions";
 import { getFilms } from "../../redux/films/filmsSelectors";
 import NavBarStyled from "./NavBarStyled";
 
 const NavBar = ({ setSelectFilmName }) => {
   const films = useSelector(getFilms);
 
-  //   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const onHandleClickFilm = (e) => {
     setSelectFilmName(e.target.textContent);
-    // dispatch(selectFilm(e.target.textContent));
+    dispatch(setIsSearch(false));
   };
 
   return (

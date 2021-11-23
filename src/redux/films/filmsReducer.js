@@ -9,6 +9,7 @@ import {
   getSearchQueryRequest,
   getSearchQuerySuccess,
   getSearchQueryError,
+  setIsSearch,
 } from "./filmsActions";
 
 export const filmsReducer = createReducer([], {
@@ -23,7 +24,11 @@ export const EntitiesInfoReducer = createReducer(
 );
 
 export const searchReducer = createReducer([], {
-  [getSearchQuerySuccess]: (state, { payload }) => payload,
+  [getSearchQuerySuccess]: (_, { payload }) => payload,
+});
+
+export const isSearchReducer = createReducer(false, {
+  [setIsSearch]: (_, { payload }) => payload,
 });
 
 export const errorReducer = createReducer("", {

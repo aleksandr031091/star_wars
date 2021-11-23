@@ -4,7 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { filmInfo } from "../../helpers/filmInfo";
 
 import { getEntitiesInfoOperation } from "../../redux/films/filmsOperations";
-import { getFilms, getEntitiesInfo } from "../../redux/films/filmsSelectors";
+import {
+  getFilms,
+  getEntitiesInfo,
+  getIsSearch,
+} from "../../redux/films/filmsSelectors";
 
 import FilmEntitiesStyled from "./FilmEntitiesStyled";
 
@@ -12,27 +16,28 @@ const FilmEntities = ({ selectFilmName }) => {
   const films = useSelector(getFilms);
   const film = filmInfo(films, selectFilmName);
   const entitiesInfo = useSelector(getEntitiesInfo);
-
+  const isSearch = useSelector(getIsSearch);
   const [currentLink, setcurrentLink] = useState("");
 
   const dispatch = useDispatch();
 
   const onHandleClickLink = (e) => {
-    const target = e.target.textContent;
+    const target = e.target;
     // const currentTarget = e.currentTarget;
     // console.log(target);
     // console.log(ref.current);
     // if (target !== currentTarget) return;
+    console.log(e.target);
 
-    setcurrentLink(target);
+    setcurrentLink(target.textContent);
 
-    const str = target.split("").splice(22).join("");
+    const str = target.textContent;
     dispatch(getEntitiesInfoOperation(str));
   };
 
   return (
     <FilmEntitiesStyled>
-      {selectFilmName && (
+      {selectFilmName && !isSearch && (
         <div className="entitiesInfo_wrapper">
           <div className="entitiesInfo_list_wrapper">
             <h3 className="entitiesInfo_title">characters</h3>
