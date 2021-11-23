@@ -3,7 +3,7 @@ import { getAllFilmsOperation } from "../redux/films/filmsOperations";
 import { useDispatch } from "react-redux";
 import Section from "./section/Section";
 import NavBar from "./nav_bar/NavBar";
-import Main from "./main/Main";
+import MainBlock from "./main_block/MainBlock";
 
 const App = () => {
   const [selectFilmName, setSelectFilmName] = useState("");
@@ -17,7 +17,7 @@ const App = () => {
   return (
     <Section>
       <NavBar setSelectFilmName={setSelectFilmName} />
-      <Main selectFilmName={selectFilmName} />
+      <MainBlock selectFilmName={selectFilmName} />
     </Section>
   );
 };

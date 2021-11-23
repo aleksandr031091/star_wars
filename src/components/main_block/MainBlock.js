@@ -1,15 +1,15 @@
 import Content from "../content_block/Content";
 import FilmEntities from "../film_entities/FilmEntities";
 import Form from "../form/Form";
-import MainStyled from "./MainStyled";
+import MainBlockStyled from "./MainBlockStyled";
 
 const Main = ({ selectFilmName }) => {
   return (
-    <MainStyled>
+    <MainBlockStyled>
       <Form />
       <Content selectFilmName={selectFilmName} />
       <FilmEntities selectFilmName={selectFilmName} />
-    </MainStyled>
+    </MainBlockStyled>
   );
 };
 

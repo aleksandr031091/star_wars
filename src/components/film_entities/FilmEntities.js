@@ -9,6 +9,7 @@ import {
   getEntitiesInfo,
   getIsSearch,
 } from "../../redux/films/filmsSelectors";
+import ContentItems from "../content_items/ContentItems";
 
 import FilmEntitiesStyled from "./FilmEntitiesStyled";
 
@@ -23,15 +24,10 @@ const FilmEntities = ({ selectFilmName }) => {
 
   const onHandleClickLink = (e) => {
     const target = e.target;
-    // const currentTarget = e.currentTarget;
-    // console.log(target);
-    // console.log(ref.current);
-    // if (target !== currentTarget) return;
-    console.log(e.target);
 
     setcurrentLink(target.textContent);
-
     const str = target.textContent;
+
     dispatch(getEntitiesInfoOperation(str));
   };
 
@@ -41,14 +37,12 @@ const FilmEntities = ({ selectFilmName }) => {
         <div className="entitiesInfo_wrapper">
           <div className="entitiesInfo_list_wrapper">
             <h3 className="entitiesInfo_title">characters</h3>
-            <ul className="entitiesInfo_list" onClick={onHandleClickLink}>
+            <ul className="entitiesInfo_list">
               {film.characters.map((link) => (
                 <li
                   className="characters_item"
                   key={film.characters.indexOf(link)}
                 >
-                  <p className="characters_link_text">{link}</p>
-
                   {currentLink === link && entitiesInfo && (
                     <div className="entitiesInfo_box">
                       <p className="entitiesInfo_items">
@@ -90,39 +84,15 @@ const FilmEntities = ({ selectFilmName }) => {
 
           <div className="entitiesInfo_list_wrapper">
             <h3 className="entitiesInfo_title">starships</h3>
-            <ul className="entitiesInfo_list" onClick={onHandleClickLink}>
+            <ul className="entitiesInfo_list">
               {film.starships.map((link) => (
                 <li className="characters_item" key={link}>
-                  <p className="characters_link_text">{link}</p>
-                  {currentLink === link && entitiesInfo && (
-                    <div className="entitiesInfo_box">
-                      <p className="entitiesInfo_items">
-                        name: {entitiesInfo.name}
-                      </p>
-                      <p className="entitiesInfo_items">
-                        model: {entitiesInfo.model}
-                      </p>
-                      <p className="entitiesInfo_items">
-                        starship class:
-                        {entitiesInfo.starship_class}
-                      </p>
-                      {entitiesInfo.passengers === "unknown" ? null : (
-                        <p className="entitiesInfo_items">
-                          passanger: {entitiesInfo.passengers}
-                        </p>
-                      )}
-
-                      <ul className="entitiesInfo_items">
-                        films:
-                        {entitiesInfo.films &&
-                          entitiesInfo.films.map((link) => (
-                            <li className="characters_link_text" key={link}>
-                              {link}
-                            </li>
-                          ))}
-                      </ul>
-                    </div>
-                  )}
+                  <ContentItems
+                    currentLink={currentLink}
+                    link={link}
+                    object={entitiesInfo}
+                    onHandleClickLink={onHandleClickLink}
+                  />
                 </li>
               ))}
             </ul>
@@ -130,47 +100,15 @@ const FilmEntities = ({ selectFilmName }) => {
 
           <div className="entitiesInfo_list_wrapper">
             <h3 className="entitiesInfo_title">planets</h3>
-            <ul className="entitiesInfo_list" onClick={onHandleClickLink}>
+            <ul className="entitiesInfo_list">
               {film.planets.map((link) => (
                 <li className="characters_item" key={link}>
-                  <p className="characters_link_text">{link}</p>
-                  {currentLink === link && entitiesInfo && (
-                    <div className="entitiesInfo_box">
-                      <p className="entitiesInfo_items">
-                        name: {entitiesInfo.name}
-                      </p>
-                      <p className="entitiesInfo_items">
-                        diameter: {entitiesInfo.diameter}
-                      </p>
-                      <p className="entitiesInfo_items">
-                        population: {entitiesInfo.population}
-                      </p>
-                      <p className="entitiesInfo_items">
-                        gravity: {entitiesInfo.gravity}
-                      </p>
-                      <p className="entitiesInfo_items">
-                        rotation period: {entitiesInfo.rotation_period}
-                      </p>
-                      <ul className="entitiesInfo_items">
-                        films:
-                        {entitiesInfo.films &&
-                          entitiesInfo.films.map((link) => (
-                            <li className="characters_link_text" key={link}>
-                              {link}
-                            </li>
-                          ))}
-                      </ul>
-                      <ul className="entitiesInfo_items">
-                        residents:
-                        {entitiesInfo.residents &&
-                          entitiesInfo.residents.map((link) => (
-                            <li className="characters_link_text" key={link}>
-                              {link}
-                            </li>
-                          ))}
-                      </ul>
-                    </div>
-                  )}
+                  <ContentItems
+                    currentLink={currentLink}
+                    link={link}
+                    object={entitiesInfo}
+                    onHandleClickLink={onHandleClickLink}
+                  />
                 </li>
               ))}
             </ul>

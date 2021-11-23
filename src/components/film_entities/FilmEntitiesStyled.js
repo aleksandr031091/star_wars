@@ -16,19 +16,19 @@ const FilmEntitiesStyled = styled.div`
     text-transform: capitalize;
   }
 
-  .characters_item {
+  /* .characters_item {
     display: flex;
     align-items: flex-start;
     padding: 5px;
 
     cursor: pointer;
-  }
+  } */
 
-  .characters_link_text:hover {
+  /* .characters_link_text:hover {
     color: #0066ff;
-  }
+  } */
 
-  .characters_item:not(:last-child) {
+  /* .characters_item:not(:last-child) {
     margin-bottom: 10px;
   }
 
@@ -38,6 +38,6 @@ const FilmEntitiesStyled = styled.div`
 
   .entitiesInfo_items:not(:last-child) {
     margin-bottom: 5px;
-  }
+  } */
 `;
 export default FilmEntitiesStyled;
