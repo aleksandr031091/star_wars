@@ -8,19 +8,15 @@ const ContentItemsStyled = styled.div`
   cursor: pointer;
   .entitiesInfo_box {
   }
-  .characters_link_text:hover {
+  .link_text:hover {
     color: #0066ff;
-  }
-
-  .characters_item:not(:last-child) {
-    margin-bottom: 10px;
   }
 
   .entitiesInfo_box {
     margin-left: 20px;
   }
 
-  .entitiesInfo_items:not(:last-child) {
+  .link_items:not(:last-child) {
     margin-bottom: 5px;
   }
 `;

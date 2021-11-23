@@ -21,6 +21,7 @@ const FrormStyled = styled.form`
   .btn_search:hover {
     transform: scale(0.9);
     border: 1px solid #51ff00;
+    cursor: pointer;
   }
 `;
 
