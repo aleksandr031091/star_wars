@@ -8,6 +8,29 @@ const ContentItems = ({ currentLink, link, object, onHandleClickLink }) => {
       </p>
       {currentLink === link && object && (
         <div className="entitiesInfo_box">
+          {object.title && <p className="film_items">{object.title}</p>}
+          {object.opening_crawl && (
+            <p className="film_items">{object.opening_crawl}</p>
+          )}
+
+          {object.episode_id && (
+            <p className="film_items">episode: ({object.episode_id})</p>
+          )}
+
+          {object.release_date && (
+            <p className="film_items">
+              release date: {object.release_date.split("-").reverse().join("-")}
+            </p>
+          )}
+
+          {object.director && (
+            <p className="film_items">director: {object.director}</p>
+          )}
+
+          {object.producer && (
+            <p className="film_items">producer: {object.producer}</p>
+          )}
+
           {object.name && (
             <p className="entitiesInfo_items">name: {object.name}</p>
           )}
@@ -78,9 +101,9 @@ const ContentItems = ({ currentLink, link, object, onHandleClickLink }) => {
           {object.films && (
             <ul className="">
               films:
-              {object.films.map((link) => (
-                <li className="characters_link_text" key={link}>
-                  {link}
+              {object.films.map((links) => (
+                <li className="characters_link_text" key={links}>
+                  {links}
                 </li>
               ))}
             </ul>
@@ -89,9 +112,20 @@ const ContentItems = ({ currentLink, link, object, onHandleClickLink }) => {
           {object.residents && (
             <ul className="">
               residents:
-              {object.residents.map((link) => (
-                <li className="characters_link_text" key={link}>
-                  {link}
+              {object.residents.map((links) => (
+                <li className="characters_link_text" key={links}>
+                  {links}
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {object.pilots && (
+            <ul className="">
+              pilots:
+              {object.pilots.map((links) => (
+                <li className="characters_link_text" key={links}>
+                  {links}
                 </li>
               ))}
             </ul>

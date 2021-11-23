@@ -1,4 +1,4 @@
-import Content from "../content_block/Content";
+import Content from "../main_block_content/Content";
 import FilmEntities from "../film_entities/FilmEntities";
 import Form from "../form/Form";
 import MainBlockStyled from "./MainBlockStyled";

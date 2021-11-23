@@ -2,7 +2,7 @@ import {
   getAllFilms,
   getEntitiesInfo,
   getSearch,
-} from "../../services/swapiApi";
+} from "../../services/swapiDev";
 import {
   getAllFilmsRequest,
   getAllFilmsSuccess,
@@ -47,7 +47,3 @@ export const getSearchOperation = (value) => async (dispatch, _) => {
     dispatch(getSearchQueryError(error));
   }
 };
-
-// export const setIsSearch = (isSearch) => (dispatch) => {
-//   dispatch(setIsSearch(isSearch));
-// };

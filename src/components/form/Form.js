@@ -11,9 +11,9 @@ const Form = () => {
   const onHandleSubmit = (e) => {
     e.preventDefault();
     if (!searchState) return;
-
     dispatch(setIsSearch(true));
     dispatch(getSearchOperation(searchState));
+    setSearchState("");
   };
 
   const onHandleSearch = (e) => {
@@ -24,12 +24,13 @@ const Form = () => {
     <FrormStyled onSubmit={onHandleSubmit}>
       <div>
         <input
-          onChange={onHandleSearch}
           className="input_search"
           type="text"
+          value={searchState}
+          onChange={onHandleSearch}
           placeholder="Skywalker"
         />
-        <button>click</button>
+        <button className="btn_search">Search</button>
       </div>
     </FrormStyled>
   );

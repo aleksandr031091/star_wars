@@ -11,6 +11,17 @@ const FrormStyled = styled.form`
     color: #000083;
     border: 1px solid #1919a7;
   }
+
+  .btn_search {
+    width: 70px;
+    height: 30px;
+    border: 1px solid #1919a7;
+  }
+
+  .btn_search:hover {
+    transform: scale(0.9);
+    border: 1px solid #51ff00;
+  }
 `;
 
 export default FrormStyled;

@@ -20,7 +20,7 @@ export const getEntitiesInfo = async (entities) => {
   }
 };
 
-// ========================== Search ==========================
+// ========================== Searching ==========================
 
 export const getSearch = async (searchValue) => {
   const promises = [

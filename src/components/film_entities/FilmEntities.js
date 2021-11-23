@@ -43,40 +43,12 @@ const FilmEntities = ({ selectFilmName }) => {
                   className="characters_item"
                   key={film.characters.indexOf(link)}
                 >
-                  {currentLink === link && entitiesInfo && (
-                    <div className="entitiesInfo_box">
-                      <p className="entitiesInfo_items">
-                        name: {entitiesInfo.name}
-                      </p>
-                      <p className="entitiesInfo_items">
-                        height: {entitiesInfo.height}
-                      </p>
-                      <p className="entitiesInfo_items">
-                        mass: {entitiesInfo.mass}
-                      </p>
-                      <p className="entitiesInfo_items">
-                        hair color: {entitiesInfo.hair_color}
-                      </p>
-                      <p className="entitiesInfo_items">
-                        skin color: {entitiesInfo.skin_color}
-                      </p>
-                      <p className="entitiesInfo_items">
-                        eye color: {entitiesInfo.eye_color}
-                      </p>
-                      <p className="entitiesInfo_items">
-                        gender: {entitiesInfo.gender}
-                      </p>
-                      <ul className="entitiesInfo_items">
-                        films:
-                        {entitiesInfo.films &&
-                          entitiesInfo.films.map((link) => (
-                            <li className="characters_link_text" key={link}>
-                              {link}
-                            </li>
-                          ))}
-                      </ul>
-                    </div>
-                  )}
+                  <ContentItems
+                    currentLink={currentLink}
+                    link={link}
+                    object={entitiesInfo}
+                    onHandleClickLink={onHandleClickLink}
+                  />
                 </li>
               ))}
             </ul>
