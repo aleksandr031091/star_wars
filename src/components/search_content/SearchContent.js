@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useSelector } from "react-redux";
 import { getSearching } from "../../redux/films/filmsSelectors";
 import ContentItems from "../content_items/ContentItems";
@@ -7,8 +6,18 @@ import SearchContentStyled from "./SearchContentStyled";
 const SearchContent = () => {
   const searchResult = useSelector(getSearching);
 
+  const noResultSearch = (arr, str) => {
+    const result = arr.filter((arr) => arr.length > 0);
+
+    if (result.length === 0) {
+      return str;
+    }
+    return;
+  };
+
   return (
     <SearchContentStyled>
+      <p>{noResultSearch(searchResult, "No results")}</p>
       <ul>
         {searchResult &&
           searchResult.map(
