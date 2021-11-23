@@ -1,4 +1,5 @@
 export const getFilms = (state) => state.films;
-// export const getSelectFilms = (state) => state.selectFilm;
 
 export const getEntitiesInfo = (state) => state.entitiesInfo;
+
+export const getSearching = (state) => state.searchResult;

@@ -2,14 +2,14 @@ import { combineReducers } from "redux";
 import {
   filmsReducer,
   EntitiesInfoReducer,
-  //   selectFilmReducer,
+  searchReducer,
   errorReducer,
 } from "./films/filmsReducer";
 
 const rootReducer = combineReducers({
   films: filmsReducer,
   entitiesInfo: EntitiesInfoReducer,
-  //   selectFilm: selectFilmReducer,
+  searchResult: searchReducer,
   error: errorReducer,
 });
 

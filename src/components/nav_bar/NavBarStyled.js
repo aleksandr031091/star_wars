@@ -3,7 +3,7 @@ import styled from "styled-components";
 const NavBarStyled = styled.div`
   padding: 20px;
   width: 350px;
-
+  min-height: 100vh;
   text-align: center;
   box-shadow: 8px 0px 23px -7px rgba(34, 60, 80, 0.31);
 

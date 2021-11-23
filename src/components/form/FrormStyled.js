@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const FrormStyled = styled.form`
+const FrormStyled = styled.div`
   padding: 0 30px 50px 30px;
 
   .input_search {

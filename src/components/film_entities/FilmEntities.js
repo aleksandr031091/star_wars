@@ -19,6 +19,11 @@ const FilmEntities = ({ selectFilmName }) => {
 
   const onHandleClickLink = (e) => {
     const target = e.target.textContent;
+    // const currentTarget = e.currentTarget;
+    // console.log(target);
+    // console.log(ref.current);
+    // if (target !== currentTarget) return;
+
     setcurrentLink(target);
 
     const str = target.split("").splice(22).join("");
@@ -28,8 +33,8 @@ const FilmEntities = ({ selectFilmName }) => {
   return (
     <FilmEntitiesStyled>
       {selectFilmName && (
-        <div>
-          <div className="entitiesInfo_wrapper">
+        <div className="entitiesInfo_wrapper">
+          <div className="entitiesInfo_list_wrapper">
             <h3 className="entitiesInfo_title">characters</h3>
             <ul className="entitiesInfo_list" onClick={onHandleClickLink}>
               {film.characters.map((link) => (
@@ -41,11 +46,15 @@ const FilmEntities = ({ selectFilmName }) => {
 
                   {currentLink === link && entitiesInfo && (
                     <div className="entitiesInfo_box">
-                      <p className="entitiesInfo_items">{entitiesInfo.name}</p>
+                      <p className="entitiesInfo_items">
+                        name: {entitiesInfo.name}
+                      </p>
                       <p className="entitiesInfo_items">
                         height: {entitiesInfo.height}
                       </p>
-                      <p className="entitiesInfo_items">{entitiesInfo.mass}</p>
+                      <p className="entitiesInfo_items">
+                        mass: {entitiesInfo.mass}
+                      </p>
                       <p className="entitiesInfo_items">
                         hair color: {entitiesInfo.hair_color}
                       </p>
@@ -58,6 +67,15 @@ const FilmEntities = ({ selectFilmName }) => {
                       <p className="entitiesInfo_items">
                         gender: {entitiesInfo.gender}
                       </p>
+                      <ul className="entitiesInfo_items">
+                        films:
+                        {entitiesInfo.films &&
+                          entitiesInfo.films.map((link) => (
+                            <li className="characters_link_text" key={link}>
+                              {link}
+                            </li>
+                          ))}
+                      </ul>
                     </div>
                   )}
                 </li>
@@ -65,7 +83,7 @@ const FilmEntities = ({ selectFilmName }) => {
             </ul>
           </div>
 
-          <div className="entitiesInfo_wrapper">
+          <div className="entitiesInfo_list_wrapper">
             <h3 className="entitiesInfo_title">starships</h3>
             <ul className="entitiesInfo_list" onClick={onHandleClickLink}>
               {film.starships.map((link) => (
@@ -90,9 +108,13 @@ const FilmEntities = ({ selectFilmName }) => {
                       )}
 
                       <ul className="entitiesInfo_items">
-                        {entitiesInfo.films.map((link) => (
-                          <li key={link}>{link}</li>
-                        ))}
+                        films:
+                        {entitiesInfo.films &&
+                          entitiesInfo.films.map((link) => (
+                            <li className="characters_link_text" key={link}>
+                              {link}
+                            </li>
+                          ))}
                       </ul>
                     </div>
                   )}
@@ -101,7 +123,7 @@ const FilmEntities = ({ selectFilmName }) => {
             </ul>
           </div>
 
-          <div className="entitiesInfo_wrapper">
+          <div className="entitiesInfo_list_wrapper">
             <h3 className="entitiesInfo_title">planets</h3>
             <ul className="entitiesInfo_list" onClick={onHandleClickLink}>
               {film.planets.map((link) => (
@@ -126,15 +148,20 @@ const FilmEntities = ({ selectFilmName }) => {
                       </p>
                       <ul className="entitiesInfo_items">
                         films:
-                        {entitiesInfo.films.map((link) => (
-                          <li key={link}>{link}</li>
-                        ))}
+                        {entitiesInfo.films &&
+                          entitiesInfo.films.map((link) => (
+                            <li className="characters_link_text" key={link}>
+                              {link}
+                            </li>
+                          ))}
                       </ul>
                       <ul className="entitiesInfo_items">
                         residents:
                         {entitiesInfo.residents &&
                           entitiesInfo.residents.map((link) => (
-                            <li key={link}>{link}</li>
+                            <li className="characters_link_text" key={link}>
+                              {link}
+                            </li>
                           ))}
                       </ul>
                     </div>

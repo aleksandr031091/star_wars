@@ -1,4 +1,8 @@
-import { getAllFilms, getEntitiesInfo } from "../../services/swapiApi";
+import {
+  getAllFilms,
+  getEntitiesInfo,
+  getSearch,
+} from "../../services/swapiApi";
 import {
   getAllFilmsRequest,
   getAllFilmsSuccess,
@@ -6,6 +10,9 @@ import {
   getEntitiesInfoRequest,
   getEntitiesInfoSuccess,
   getEntitiesInfoError,
+  getSearchQueryRequest,
+  getSearchQuerySuccess,
+  getSearchQueryError,
 } from "./filmsActions";
 
 export const getAllFilmsOperation = () => async (dispatch, _) => {
@@ -26,5 +33,17 @@ export const getEntitiesInfoOperation = (entities) => async (dispatch, _) => {
     dispatch(getEntitiesInfoSuccess(result.data));
   } catch (error) {
     dispatch(getEntitiesInfoError(error));
+  }
+};
+
+export const getSearchOperation = (value) => async (dispatch, _) => {
+  try {
+    dispatch(getSearchQueryRequest());
+
+    const result = await getSearch(value);
+
+    dispatch(getSearchQuerySuccess(result.map((res) => res.data.results)));
+  } catch (error) {
+    dispatch(getSearchQueryError(error));
   }
 };

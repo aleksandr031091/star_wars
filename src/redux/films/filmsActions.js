@@ -4,7 +4,6 @@ export const getAllFilmsRequest = createAction("films/getAllfilms");
 export const getAllFilmsSuccess = createAction("films/getAllFilmsSuccess");
 export const getAllFilmsError = createAction("films/getAllfilmsError");
 
-// export const selectFilm = createAction("films/addFilmName");
 export const getEntitiesInfoRequest = createAction(
   "entities/getEntitiesInfoRequest"
 );
@@ -14,3 +13,11 @@ export const getEntitiesInfoSuccess = createAction(
 export const getEntitiesInfoError = createAction(
   "entities/getEntitiesInfoError"
 );
+
+export const getSearchQueryRequest = createAction(
+  "search/getSearchQueryRequest"
+);
+export const getSearchQuerySuccess = createAction(
+  "search/getSearchQuerySuccess"
+);
+export const getSearchQueryError = createAction("search/getSearchQueryError");
