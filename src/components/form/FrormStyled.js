@@ -3,6 +3,10 @@ import styled from "styled-components";
 const FrormStyled = styled.form`
   margin-bottom: 50px;
 
+  .input_wrapper {
+    display: flex;
+  }
+
   .input_search {
     margin-right: 10px;
     padding-left: 5px;
@@ -13,6 +17,9 @@ const FrormStyled = styled.form`
   }
 
   .btn_search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 70px;
     height: 30px;
     border: 1px solid #1919a7;

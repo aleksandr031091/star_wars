@@ -22,7 +22,7 @@ const Form = () => {
 
   return (
     <FrormStyled onSubmit={onHandleSubmit}>
-      <div>
+      <div className="input_wrapper">
         <input
           className="input_search"
           type="text"

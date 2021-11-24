@@ -119,6 +119,61 @@ const ContentItems = ({ currentLink, link, object, onHandleClickLink }) => {
               ))}
             </ul>
           )}
+
+          {object.characters && (
+            <ul className="">
+              characters:
+              {object.characters.map((links) => (
+                <li className="link_text" key={links}>
+                  {links}
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {object.planets && (
+            <ul className="">
+              planets:
+              {object.planets.map((links) => (
+                <li className="link_text" key={links}>
+                  {links}
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {object.starships && (
+            <ul className="">
+              starships:
+              {object.starships.map((links) => (
+                <li className="link_text" key={links}>
+                  {links}
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {object.vehicles && (
+            <ul className="">
+              vehicles:
+              {object.vehicles.map((links) => (
+                <li className="link_text" key={links}>
+                  {links}
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {object.species && (
+            <ul className="">
+              species:
+              {object.species.map((links) => (
+                <li className="link_text" key={links}>
+                  {links}
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       )}
     </ContentItemsStyled>
