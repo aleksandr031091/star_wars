@@ -16,11 +16,13 @@ const FrormStyled = styled.form`
     width: 70px;
     height: 30px;
     border: 1px solid #1919a7;
+    background-color: transparent;
   }
 
   .btn_search:hover {
     transform: scale(0.9);
     border: 1px solid #51ff00;
+
     cursor: pointer;
   }
 `;
